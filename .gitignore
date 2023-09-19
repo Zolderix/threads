@@ -1,0 +1,6 @@
+.vs
+.idea
+cmake-build-debug
+_out
+out
+.cmake
