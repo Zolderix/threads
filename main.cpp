@@ -1,14 +1,15 @@
 #include <iostream>
 #include <thread>
 
-void test(int x)
-{
-	std::cout << "Hello from thread " << x << std::endl;
-}
+
 
 int main()
 {
-	std::thread thread1(&test, 1); 
+	auto lambda = [](int x)
+		{
+			std::cout << "Hello from thread " << x << std::endl;
+		};
+	std::thread thread1(lambda, 1); 
 	thread1.join();
 
 	std::cout << "Hello from main thread" << std::endl;
