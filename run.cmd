@@ -1,4 +1,5 @@
 @echo off
 
-_out\threads.exe
-set /p DUMMY=Hit ENTER to continue...
+_out\Debug\threads.exe
+pause
+rem set /p DUMMY=Hit ENTER (Agressively) to continue...

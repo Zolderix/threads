@@ -1,6 +1,8 @@
 @echo off
 
-mkdir .cmake
+call cmake -S . -B _out
+call cmake --build _out
 
-cmake -S . -B ./.cmake
-cmake --build ./.cmake
+_out\Debug\threads.exe
+
+pause
