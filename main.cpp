@@ -12,14 +12,11 @@ int main()
 			std::cout << "Argument: " << x << std::endl;
 		};
 
-	std::vector<std::thread> threads;
+	//jthreads are used since c++20 to join automatically
+	std::vector<std::jthread> threads;
 	for (int i = 0; i < 10; i++)
 	{
-		threads.push_back(std::thread(lambda, i));
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		threads[i].join();
+		threads.push_back(std::jthread(lambda, i));
 	}
 
 	std::cout << "Hello from main thread" << std::endl;
